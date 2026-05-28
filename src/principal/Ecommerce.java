@@ -24,12 +24,9 @@ public class Ecommerce {
 				compra.cadastrarProduto();
 				break;
 			case 2:
-				compra.cadastrarMovel();
-				break;
-			case 3:
 				venda.consultarProduto();
 				break;
-			case 4:
+			case 3:
 				return;
 			}
 		} while (opcao < 3);
