@@ -4,12 +4,13 @@ import compras.Compra;
 import controlador.ClienteController;
 import controlador.CompradorController;
 import controlador.ProdutoController;
+import interfaces.TelaListarProdutos;
 import interfaces.TelaMenuPrincipal;
 import vendas.Venda;
 
 // cadastrarMoveis ✅
 // cadastrarComprador ✅
-// cadastrarCliente (maria)
+// cadastrarCliente (maria) ✅ 
 // cadastrarPedido (anderson)
 // fazerPedido (mary)
 // produtoController
@@ -21,6 +22,7 @@ public class Ecommerce {
 	
 	public static void main(String[] args) {
 		TelaMenuPrincipal tmp = new TelaMenuPrincipal();
+		
 		
 		ProdutoController produtoController = new ProdutoController();
 		CompradorController compradorController = new CompradorController();
@@ -42,18 +44,21 @@ public class Ecommerce {
 				venda.consultarProduto();
 				break;
 			case 3:
-				compra.cadastrarComprador();
+				produtoController.listarProdutos();
 				break;
 			case 4:
-				compra.listarCompradores();
+				compra.cadastrarComprador();
 				break;
 			case 5:
-				compra.buscarComprador();
+				compra.listarCompradores();
 				break;
 			case 6:
-				venda.cadastrarCliente();
+				compra.buscarComprador();
 				break;
 			case 7:
+				venda.cadastrarCliente();
+				break;
+			case 8:
 				venda.consultarCliente();
 				break;
 			case 0:

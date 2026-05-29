@@ -28,7 +28,9 @@ public class Compra {
 	public void cadastrarComprador() {
 		TelaCadastrarComprador tcc = new TelaCadastrarComprador();
 		Comprador comprador = tcc.cadastrarNovoComprador();
+		
 		compradorController.cadastrarComprador(comprador);
+		
 		System.out.println("\nComprador cadastrado (simulado):");
 		System.out.println("Código: " + comprador.getCodigo());
 		System.out.println("CPF/CNPJ: " + comprador.getCpfcnpj());
