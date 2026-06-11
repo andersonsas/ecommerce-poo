@@ -8,3 +8,17 @@ Interface de E-Commerce implementada para uma Atividade da disciplina de Program
 4. Adicione os arquivos modificados com `git add .`
 5. Comite as mudanças com uma mensagem descritiva sobre seu método com `git commit -m "mensagem"`.
 6. Faça push das mudanças para o repositório com `git push -u origin main`.
+
+## Métodos Implementados
+- [x] cadastrarMovel (beatriz e kinan)
+- [x] cadastrarLivro (equipe P)
+- [x] cadastrarComprador (anthony e ivo)
+- [x] cadastrarProduto (equipe P)
+- [ ] cadastrarFornecedor (anne oliveira & nicolas)
+- [ ] fazerPedido (mary)
+- [ ] receberPedido (cauan)
+- [ ] listarPedidos (?)
+- [ ] cadastrarCliente (maria)
+- [ ] consultarCliente (maria)
+- [ ] comprarProduto (anderson)
+- [ ] listarCliente (maria)
