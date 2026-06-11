@@ -8,7 +8,7 @@ Interface de E-Commerce implementada para uma Atividade da disciplina de Program
 4. Faça as modificações e verifique se tudo funciona corretamente!
 5. Adicione os arquivos modificados com `git add .`
 6. Comite as mudanças com uma mensagem descritiva sobre seu método com `git commit -m "mensagem"`.
-7. Faça push das mudanças para o repositório com `git push -u origin main`.
+7. Faça push das mudanças para o repositório com `git push`.
 8. Vá para o repositório do seu FORK e crie um pull request
 
 ## Métodos Implementados
