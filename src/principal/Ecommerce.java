@@ -3,38 +3,31 @@ package principal;
 import compras.Compra;
 import controlador.ClienteController;
 import controlador.CompradorController;
+import controlador.FornecedorController;
 import controlador.ProdutoController;
-import interfaces.TelaListarProdutos;
 import interfaces.TelaMenuPrincipal;
 import vendas.Venda;
-
-// cadastrarMoveis ✅
-// cadastrarComprador ✅
-// cadastrarCliente (maria) ✅ 
-// cadastrarPedido (anderson)
-// fazerPedido (mary)
-// produtoController
-// cadastrarFornecedor (nicolas)
-// comprarProduto (anderson)
+import Fornecedor.Fornecedor;
 
 public class Ecommerce {
-	
-	
+
 	public static void main(String[] args) {
 		TelaMenuPrincipal tmp = new TelaMenuPrincipal();
 		
 		ProdutoController produtoController = new ProdutoController();
+		FornecedorController fornecedorController = new FornecedorController();
 		CompradorController compradorController = new CompradorController();
 		ClienteController clienteController = new ClienteController();
-		
+
+		Fornecedor fornecedor = new Fornecedor(fornecedorController);
 		Compra compra = new Compra(produtoController, compradorController);
 		Venda venda = new Venda(produtoController, clienteController);
-		
+
 		int opcao = 0;
-		
+
 		do {
 			opcao = tmp.menuPrincipal();
-			
+
 			switch (opcao) {
 			case 1:
 				compra.cadastrarProduto();
@@ -60,9 +53,17 @@ public class Ecommerce {
 			case 8:
 				venda.consultarCliente();
 				break;
+			case 9:
+				fornecedor.cadastrarFornecedor();
+				break;
+			case 10: 
+				fornecedor.buscarFornecedor();
+				break;
 			case 0:
 				return;
+			default: 
+				System.out.println("Opcao invalida!");
 			}
-		} while (opcao > 0 && opcao < 8);
+		} while (opcao > 0 && opcao < 11);
 	}
 }
