@@ -9,7 +9,17 @@ public class CompradorController {
     private List<Comprador> compradores = new ArrayList<Comprador>();
 
     public void cadastrarComprador(Comprador c) {
+        if (c == null || c.getCodigo() <= 0 || isNullOrBlank(c.getCpfcnpj()) || isNullOrBlank(c.getNome())
+                || isNullOrBlank(c.getEndereco()) || isNullOrBlank(c.getTelefone()) || isNullOrBlank(c.getEmail())) {
+            System.out.println("Não é possível cadastrar comprador com campos obrigatórios vazios.");
+            return;
+        }
+
         compradores.add(c);
+    }
+
+    private boolean isNullOrBlank(String valor) {
+        return valor == null || valor.trim().isEmpty();
     }
 
     public List<Comprador> buscarCompradores(String chave) {

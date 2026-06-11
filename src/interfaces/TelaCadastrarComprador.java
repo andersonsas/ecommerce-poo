@@ -8,22 +8,44 @@ public class TelaCadastrarComprador {
     public Comprador cadastrarNovoComprador() {
         Comprador c = new Comprador();
         System.out.println("CADASTRO DE COMPRADOR");
-        System.out.print("Informe o Código: ");
-        try {
-            c.setCodigo(Integer.parseInt(Input.get()));
-        } catch (NumberFormatException e) {
-            c.setCodigo(0);
-        }
-        System.out.print("Informe o CPF/CNPJ: ");
-        c.setCpfcnpj(Input.get());
-        System.out.print("Informe o Nome: ");
-        c.setNome(Input.get());
-        System.out.print("Informe o Endereço: ");
-        c.setEndereco(Input.get());
-        System.out.print("Informe o Telefone: ");
-        c.setTelefone(Input.get());
-        System.out.print("Informe o Email: ");
-        c.setEmail(Input.get());
+        c.setCodigo(getCodigo("Informe o Código: "));
+        c.setCpfcnpj(getTextoObrigatorio("Informe o CPF/CNPJ: "));
+        c.setNome(getTextoObrigatorio("Informe o Nome: "));
+        c.setEndereco(getTextoObrigatorio("Informe o Endereço: "));
+        c.setTelefone(getTextoObrigatorio("Informe o Telefone: "));
+        c.setEmail(getTextoObrigatorio("Informe o Email: "));
         return c;
+    }
+
+    private int getCodigo(String mensagem) {
+        while (true) {
+            System.out.print(mensagem);
+            String texto = Input.get();
+            if (texto == null || texto.trim().isEmpty()) {
+                System.out.println("Código é obrigatório. Tente novamente.");
+                continue;
+            }
+            try {
+                int codigo = Integer.parseInt(texto.trim());
+                if (codigo <= 0) {
+                    System.out.println("Código inválido. Informe um número inteiro maior que zero.");
+                    continue;
+                }
+                return codigo;
+            } catch (NumberFormatException e) {
+                System.out.println("Código inválido. Informe um número inteiro válido.");
+            }
+        }
+    }
+
+    private String getTextoObrigatorio(String mensagem) {
+        while (true) {
+            System.out.print(mensagem);
+            String texto = Input.get();
+            if (texto != null && !texto.trim().isEmpty()) {
+                return texto.trim();
+            }
+            System.out.println("Este campo é obrigatório. Não pode ficar em branco.");
+        }
     }
 }
