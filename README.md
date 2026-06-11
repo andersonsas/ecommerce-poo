@@ -1,5 +1,5 @@
 # Projeto de E-Commerce
-Interface de E-Commerce implementada para uma Atividade da disciplina de Programação Orientada a Objetos.
+Interface de E-Commerce implementada para uma Atividade da disciplina de Programação Orientada a Objetos. Este repositório consiste da unificação colaborativa das partes de todas as equipes da turma.
 
 ## Como contribuir?
 1. Clone o repositório na sua workspace do eclipse com `git clone https://github.com/kprincipe/ecommerce-poo`
