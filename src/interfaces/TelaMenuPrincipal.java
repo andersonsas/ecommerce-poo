@@ -10,6 +10,8 @@ public class TelaMenuPrincipal {
 
 		System.out.println("1. cadastrar produto.");
 		System.out.println("2. buscar produto.");
+		
+		
 		System.out.println("3. listar produtos.");
 		System.out.println();
 
@@ -24,10 +26,11 @@ public class TelaMenuPrincipal {
 
 		System.out.println("9. cadastrar fornecedor.");
 		System.out.println("10. buscar fornecedor.");
+    System.out.println("11. comprar Produto.");
 		System.out.println();
 
 		System.out.println("0. sair.");
-
+    
 		return Integer.parseInt(Input.get());
 	}
 }
