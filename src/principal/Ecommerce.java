@@ -6,12 +6,12 @@ import controlador.CompradorController;
 import controlador.FornecedorController;
 import controlador.ProdutoController;
 import interfaces.TelaMenuPrincipal;
-import vendas.Venda;
+import vendas.VendaController;
 import Fornecedor.Fornecedor;
 
 public class Ecommerce {
 
-	public static void main(String[] args) {
+	public static void main (String[] args) {
 		TelaMenuPrincipal tmp = new TelaMenuPrincipal();
 
 		ProdutoController produtoController = new ProdutoController();
@@ -21,7 +21,7 @@ public class Ecommerce {
 
 		Fornecedor fornecedor = new Fornecedor(fornecedorController);
 		Compra compra = new Compra(produtoController, compradorController);
-		Venda venda = new Venda(produtoController, clienteController);
+		VendaController venda = new VendaController(produtoController, clienteController);
 
 		int opcao = 0;
 
@@ -56,14 +56,17 @@ public class Ecommerce {
 			case 9:
 				fornecedor.cadastrarFornecedor();
 				break;
-			case 10: 
+			case 10:
 				fornecedor.buscarFornecedor();
+				break;
+			case 11:
+				venda.comprarProduto();
 				break;
 			case 0:
 				return;
-			default: 
+			default:
 				System.out.println("Opcao invalida!");
 			}
-		} while (opcao > 0 && opcao < 11);
+		} while (opcao > 0 && opcao < 12);
 	}
 }

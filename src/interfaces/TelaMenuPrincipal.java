@@ -9,7 +9,8 @@ public class TelaMenuPrincipal {
 		System.out.println("2. buscar produto.");
 		System.out.println("3. cadastrar fornecedor.");
 		System.out.println("4. buscar fornecedor..");
-		System.out.println("5. sair");
+		System.out.println("11. comprar Produto.");
+		System.out.println("0. sair");
 		
 		return Integer.parseInt(Input.get());
 	}
