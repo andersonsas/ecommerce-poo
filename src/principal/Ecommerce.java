@@ -36,14 +36,34 @@ public class Ecommerce {
 				venda.consultarProduto();
 				break;
 			case 3:
-				fornecedor.cadastrarFornecedor();
+				produtoController.listarProdutos();
 				break;
 			case 4:
-				fornecedor.buscarFornecedor();
+				compra.cadastrarComprador();
 				break;
 			case 5:
+				compra.listarCompradores();
 				break;
+			case 6:
+				compra.buscarComprador();
+				break;
+			case 7:
+				venda.cadastrarCliente();
+				break;
+			case 8:
+				venda.consultarCliente();
+				break;
+			case 9:
+				fornecedor.cadastrarFornecedor();
+				break;
+			case 10: 
+				fornecedor.buscarFornecedor();
+				break;
+			case 0:
+				return;
+			default: 
+				System.out.println("Opcao invalida!");
 			}
-		} while (opcao < 5);
+		} while (opcao > 0 && opcao < 11);
 	}
 }
