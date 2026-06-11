@@ -1,35 +1,25 @@
 package principal;
 
 import compras.Compra;
-import controlador.ClienteController;
-import controlador.CompradorController;
+import controlador.FornecedorController;
 import controlador.ProdutoController;
-import interfaces.TelaListarProdutos;
 import interfaces.TelaMenuPrincipal;
 import vendas.Venda;
-
-// cadastrarMoveis ✅
-// cadastrarComprador ✅
-// cadastrarCliente (maria) ✅ 
-// cadastrarPedido (anderson)
-// fazerPedido (mary)
-// produtoController
-// cadastrarFornecedor (nicolas)
-// comprarProduto (anderson)
+import Fornecedor.Fornecedor;
 
 public class Ecommerce {
 	
 	
 	public static void main(String[] args) {
-		TelaMenuPrincipal tmp = new TelaMenuPrincipal();
-		
+		TelaMenuPrincipal tmp = new TelaMenuPrincipal(); 
 		
 		ProdutoController produtoController = new ProdutoController();
-		CompradorController compradorController = new CompradorController();
-		ClienteController clienteController = new ClienteController();
+		FornecedorController fornecedorController = new FornecedorController();
 		
-		Compra compra = new Compra(produtoController, compradorController);
-		Venda venda = new Venda(produtoController, clienteController);
+		Fornecedor fornecedor =  new Fornecedor(fornecedorController);
+		Compra compra = new Compra(produtoController);
+		Venda venda = new Venda(produtoController);
+	
 		
 		int opcao = 0;
 		
@@ -42,28 +32,17 @@ public class Ecommerce {
 				break;
 			case 2:
 				venda.consultarProduto();
-				break;
+				break;	
 			case 3:
-				produtoController.listarProdutos();
+				fornecedor.cadastrarFornecedor();
 				break;
 			case 4:
-				compra.cadastrarComprador();
+				fornecedor.buscarFornecedor();
 				break;
 			case 5:
-				compra.listarCompradores();
 				break;
-			case 6:
-				compra.buscarComprador();
-				break;
-			case 7:
-				venda.cadastrarCliente();
-				break;
-			case 8:
-				venda.consultarCliente();
-				break;
-			case 0:
-				return;
 			}
-		} while (opcao > 0 && opcao < 8);
+		} while (opcao < 5);
 	}
+
 }
