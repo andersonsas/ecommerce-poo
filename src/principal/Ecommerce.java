@@ -13,7 +13,7 @@ public class Ecommerce {
 
 	public static void main (String[] args) {
 		TelaMenuPrincipal tmp = new TelaMenuPrincipal();
-
+		
 		ProdutoController produtoController = new ProdutoController();
 		FornecedorController fornecedorController = new FornecedorController();
 		CompradorController compradorController = new CompradorController();
