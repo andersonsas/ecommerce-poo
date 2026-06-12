@@ -7,7 +7,7 @@ import controlador.FornecedorController;
 import controlador.ProdutoController;
 import interfaces.TelaMenuPrincipal;
 import vendas.VendaController;
-import Fornecedor.Fornecedor;
+import fornecedor.Fornecedor;
 
 public class Ecommerce {
 
