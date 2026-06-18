@@ -5,6 +5,7 @@ import java.util.List;
 
 import controlador.CompradorController;
 import controlador.FornecedorController;
+import controlador.Pedidocontroller;
 import controlador.ProdutoController;
 import entidade.Comprador;
 import entidade.Pedido;
@@ -14,19 +15,23 @@ import interfaces.TelaCadastrarLivro;
 import interfaces.TelaCadastrarMovel;
 import interfaces.TelaFazerPedido;
 import interfaces.TelaListarCompradores;
+import interfaces.TelaReceberPedido;
 import interfaces.TelaSelecionarTipoProduto;
 
 public class Compra {
 	
-	private List<Pedido> pedidos = new ArrayList<Pedido>();
+	public List<Pedido> pedidos = new ArrayList<Pedido>();
 	private ProdutoController produtoController;
 	private CompradorController compradorController;
 	private FornecedorController fornecedorController;
+	private Pedidocontroller pedidoController;
 	
-	public Compra(ProdutoController produtoController, CompradorController compradorController, FornecedorController fornecedorController){
+	public Compra(ProdutoController produtoController, CompradorController compradorController, 
+			FornecedorController fornecedorController, Pedidocontroller pedidocontroller){
 		this.produtoController = produtoController;
 		this.compradorController = compradorController;
 		this.fornecedorController = fornecedorController;
+		this.pedidoController = pedidocontroller;	
 	}
 	
 	public void cadastrarComprador() {
@@ -75,16 +80,19 @@ public class Compra {
         Pedido pedido = tfp.fazerNovoPedido();
 
         cadastrarCompra(pedido);
+        
 	}
 	
 	public void receberPedido() {
 		TelaReceberPedido trp = new TelaReceberPedido();
 
 		int indice = trp.selecionarPedido(
-				pedidoController.listarPedidos());
+				pedidos);
 
 		if (indice == -1) {
 			return;
+		} else {
+
 		}
 
 		Pedido pedidoRecebido =
@@ -96,12 +104,11 @@ public class Compra {
 					.adicionarEstoque(
 							pedidoRecebido.getQuantidade());
 
-			System.out.println(
-					"Pedido recebido com sucesso! Estoque atualizado.");
-
 		} else {
+			pedidos.remove(indice);
+			System.out.println(
+					"Pedido recebido com sucesso!");
 
-			System.out.println("Pedido inválido.");
 		}
 	}
 	
@@ -118,4 +125,5 @@ public class Compra {
 	public void listarPedidos() {
 		
 	}
+	
 }
