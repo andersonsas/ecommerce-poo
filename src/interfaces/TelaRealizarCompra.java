@@ -2,10 +2,35 @@ package interfaces;
 
 import java.util.List;
 
+import entidade.Cliente;
 import entidade.Produto;
 import util.Input;
 
 public class TelaRealizarCompra {
+
+	public Cliente selecionarCliente (List<Cliente> clientes) {
+		if (clientes == null || clientes.isEmpty()) {
+			System.out.println("Nenhum cliente encontrado para o termo informado.");
+			return null;
+		}
+
+		System.out.println("\nCLIENTES ENCONTRADOS:");
+		for (int i = 0; i < clientes.size(); i++) {
+			System.out.printf("%d. %s%n", i + 1, clientes.get(i));
+		}
+
+		System.out.print("Selecione o número do cliente (0 para cancelar): ");
+		int opcao = Integer.parseInt(Input.get());
+
+		if (opcao == 0) return null;
+
+		if (opcao < 1 || opcao > clientes.size()) {
+			System.out.println("Opção fora do intervalo.");
+			return null;
+		}
+
+		return clientes.get(opcao - 1);
+	}
 
 	public Produto selecionarProduto (List<Produto> produtos) {
 		if (produtos == null || produtos.isEmpty()) {

@@ -3,6 +3,7 @@ package vendas;
 import java.util.ArrayList;
 import java.util.List;
 
+import entidade.Cliente;
 import entidade.Compra;
 import entidade.Produto;
 import entidade.Venda;
@@ -17,7 +18,7 @@ import interfaces.TelaRealizarCompra;
 
 public class VendaController {
 
-	private List<Venda> vendas = new ArrayList<Venda>();
+	private List<Compra> vendas = new ArrayList<Compra>();
 
 	private ProdutoController produtoController;
 	private ClienteController clienteController;
@@ -50,10 +51,23 @@ public class VendaController {
 	}
 
 	public void comprarProduto () {
+		TelaRealizarCompra trc = new TelaRealizarCompra();
+
+		// Busca e seleciona o cliente que está realizando a compra
+		TelaBuscaCliente tbc = new TelaBuscaCliente(clienteController);
+		List<Cliente> clientesEncontrados = tbc.buscarCliente();
+
+		Cliente clienteEscolhido = trc.selecionarCliente(clientesEncontrados);
+		if (clienteEscolhido == null) {
+			System.out.println("Compra cancelada.");
+			return;
+		}
+
+		// Busca o produto pelo termo informado pelo cliente
 		TelaBuscaProduto tbp = new TelaBuscaProduto(produtoController);
 		List<Produto> produtosEncontrados = tbp.buscarProduto();
 
-		TelaRealizarCompra trc = new TelaRealizarCompra();
+		// Cliente seleciona o produto desejado e informa a quantidade
 
 		Produto produtoEscolhido = trc.selecionarProduto(produtosEncontrados);
 		if (produtoEscolhido == null) {
@@ -67,13 +81,14 @@ public class VendaController {
 			return;
 		}
 
-		Venda venda = new Venda();
-		venda.setCodigo(vendas.size() + 1);
-		venda.setProduto(produtoEscolhido);
-		venda.setQuantidade(quantidade);
-		venda.setStatus(Venda.cadastrada);
+		Compra compra = new Compra();
+		compra.setCodigo(vendas.size() + 1);
+		compra.setCliente(clienteEscolhido);
+		compra.setProduto(produtoEscolhido);
+		compra.setQuantidade(quantidade);
+		compra.setStatus(Compra.cadastrada);
 
-		vendas.add(venda);
+		vendas.add(compra);
 
 		produtoEscolhido.reduzirEstoque(quantidade);
 
