@@ -17,14 +17,14 @@ Interface de E-Commerce implementada para uma Atividade da disciplina de Program
 
 ## Métodos Implementados
 - [x] cadastrarMovel (beatriz e kinan)
-- [x] cadastrarLivro (equipe P)
+- [x] cadastrarLivro (professor)
 - [x] cadastrarComprador (anthony e ivo)
-- [x] cadastrarProduto (equipe P)
+- [x] cadastrarProduto (professor)
 - [x] cadastrarFornecedor (anne oliveira & nicolas)
 - [x] cadastrarCliente (maria)
 - [x] consultarCliente (maria)
 - [x] comprarProduto (anderson e cauan)
 - [x] listarCliente (maria)
-- [ ] fazerPedido (mary)
+- [x] fazerPedido (mary)
 - [ ] receberPedido (cauan)
-- [ ] listarPedidos (?)
+- [ ] listarPedidos
