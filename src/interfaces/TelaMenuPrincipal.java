@@ -27,10 +27,13 @@ public class TelaMenuPrincipal {
 
 		System.out.println("10. cadastrar fornecedor.");
 		System.out.println("11. buscar fornecedor.");
-    System.out.println("12. comprar Produto.");
-		System.out.println();
-
+		System.out.println("12. comprar Produto.");
+		System.out.println("13. receber pedido");
+	
 		System.out.println("0. sair.");
+		
+		System.out.println("\nEscreva: ");
+	    
     
 		return Integer.parseInt(Input.get());
 	}
