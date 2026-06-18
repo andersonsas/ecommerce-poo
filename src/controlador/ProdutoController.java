@@ -40,7 +40,7 @@ public class ProdutoController {
 			} else if (produto instanceof Movel) {
 				Movel movel = (Movel) produto;
 				if(movel.getCor().contains(chaveMin) ||
-					movel.getMaterial().contains(chaveMin))
+					movel.getMaterial().contains(chaveMin) || movel.getDescricao().contains(chaveMin))
 					produtosBusca.add(produto);
 			} else {
 				if(produto.getDescricao().contains(chave))
