@@ -2,6 +2,10 @@
 Interface de E-Commerce implementada para uma Atividade da disciplina de Programação Orientada a Objetos. Este repositório consiste da unificação colaborativa das partes de todas as equipes da turma.
 
 ## Como contribuir?
+
+> [!WARNING]
+> Use esse projeto no **SOMENTE** no **Eclipse**. Para abrir o projeto, siga o passo a passo descrito [aqui](https://github.com/kprincipe/xadrez-poo/blob/master/README.md#como-mandar-sua-parte-do-projeto)
+
 1. Faça um FORK desse projeto.
 2. Clone o seu FORK na sua workspace do eclipse com `git clone https://github.com/SEU-USUARIO/ecommerce-poo`
 3. Crie uma nova branch para sua implementação com `git checkout -b metodo` onde `metodo` é o nome do método da sua equipe.
