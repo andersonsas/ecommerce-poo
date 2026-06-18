@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import controlador.CompradorController;
+import controlador.FornecedorController;
 import controlador.ProdutoController;
 import entidade.Comprador;
 import entidade.Pedido;
@@ -11,6 +12,7 @@ import interfaces.TelaBuscarComprador;
 import interfaces.TelaCadastrarComprador;
 import interfaces.TelaCadastrarLivro;
 import interfaces.TelaCadastrarMovel;
+import interfaces.TelaFazerPedido;
 import interfaces.TelaListarCompradores;
 import interfaces.TelaSelecionarTipoProduto;
 
@@ -19,10 +21,12 @@ public class Compra {
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	private ProdutoController produtoController;
 	private CompradorController compradorController;
+	private FornecedorController fornecedorController;
 	
-	public Compra(ProdutoController produtoController, CompradorController compradorController){
+	public Compra(ProdutoController produtoController, CompradorController compradorController, FornecedorController fornecedorController){
 		this.produtoController = produtoController;
 		this.compradorController = compradorController;
+		this.fornecedorController = fornecedorController;
 	}
 	
 	public void cadastrarComprador() {
@@ -61,8 +65,16 @@ public class Compra {
 		
 	}
 	
+	public void cadastrarCompra(Pedido pedido) {
+		pedidos.add(pedido);
+	}
+	
 	public void fazerPedido() {
-		
+		TelaFazerPedido tfp = new TelaFazerPedido(compradorController, produtoController, fornecedorController);
+
+        Pedido pedido = tfp.fazerNovoPedido();
+
+        cadastrarCompra(pedido);
 	}
 	
 	public void receberPedido() {

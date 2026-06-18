@@ -20,13 +20,14 @@ public class TelaMenuPrincipal {
 		System.out.println("6. buscar comprador.");
 		System.out.println();
 
-		System.out.println("7. cadastrar cliente.");
-		System.out.println("8. buscar cliente.");
+		System.out.println("7. fazer pedido.");
+		System.out.println("8. cadastrar cliente.");
+		System.out.println("9. buscar cliente.");
 		System.out.println();
 
-		System.out.println("9. cadastrar fornecedor.");
-		System.out.println("10. buscar fornecedor.");
-    System.out.println("11. comprar Produto.");
+		System.out.println("10. cadastrar fornecedor.");
+		System.out.println("11. buscar fornecedor.");
+    System.out.println("12. comprar Produto.");
 		System.out.println();
 
 		System.out.println("0. sair.");

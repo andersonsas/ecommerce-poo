@@ -20,7 +20,7 @@ public class Ecommerce {
 		ClienteController clienteController = new ClienteController();
 
 		Fornecedor fornecedor = new Fornecedor(fornecedorController);
-		Compra compra = new Compra(produtoController, compradorController);
+		Compra compra = new Compra(produtoController, compradorController, fornecedorController);
 		VendaController venda = new VendaController(produtoController, clienteController);
 
 		int opcao = 0;
@@ -48,18 +48,21 @@ public class Ecommerce {
 				compra.buscarComprador();
 				break;
 			case 7:
-				venda.cadastrarCliente();
+				compra.fazerPedido();
 				break;
 			case 8:
-				venda.consultarCliente();
+				venda.cadastrarCliente();
 				break;
 			case 9:
-				fornecedor.cadastrarFornecedor();
+				venda.consultarCliente();
 				break;
 			case 10:
-				fornecedor.buscarFornecedor();
+				fornecedor.cadastrarFornecedor();
 				break;
 			case 11:
+				fornecedor.buscarFornecedor();
+				break;
+			case 12:
 				venda.comprarProduto();
 				break;
 			case 0:
@@ -67,6 +70,6 @@ public class Ecommerce {
 			default:
 				System.out.println("Opcao invalida!");
 			}
-		} while (opcao > 0 && opcao < 12);
+		} while (opcao > 0 && opcao < 13);
 	}
 }
