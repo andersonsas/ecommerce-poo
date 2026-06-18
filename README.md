@@ -26,5 +26,4 @@ Interface de E-Commerce implementada para uma Atividade da disciplina de Program
 - [x] comprarProduto (anderson e cauan)
 - [x] listarCliente (maria)
 - [x] fazerPedido (mary)
-- [ ] receberPedido (cauan)
-- [ ] listarPedidos
+- [X] receberPedido (cauan)
