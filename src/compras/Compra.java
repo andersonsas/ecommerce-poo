@@ -78,7 +78,31 @@ public class Compra {
 	}
 	
 	public void receberPedido() {
-		
+		TelaReceberPedido trp = new TelaReceberPedido();
+
+		int indice = trp.selecionarPedido(
+				pedidoController.listarPedidos());
+
+		if (indice == -1) {
+			return;
+		}
+
+		Pedido pedidoRecebido =
+				pedidoController.receberPedido(indice);
+
+		if (pedidoRecebido != null) {
+
+			pedidoRecebido.getProduto()
+					.adicionarEstoque(
+							pedidoRecebido.getQuantidade());
+
+			System.out.println(
+					"Pedido recebido com sucesso! Estoque atualizado.");
+
+		} else {
+
+			System.out.println("Pedido inválido.");
+		}
 	}
 	
 	public void cadastrarLivro() {
