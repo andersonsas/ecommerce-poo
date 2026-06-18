@@ -6,13 +6,17 @@ public class Pedido {
 	private float quantidade;
 	private Comprador comprador;
 	private Produto produto;
+	private Fornecedor fornecedor;
 	
-	public Pedido(String dataPedido, String previsaoEntrega, float quantidade, Comprador comprador, Produto produto) {
+	public Pedido() {}
+	
+	public Pedido(String dataPedido, String previsaoEntrega, float quantidade, Comprador comprador, Produto produto, Fornecedor fornecedor) {
 		this.dataPedido = dataPedido;
 		this.previsaoEntrega = previsaoEntrega;
 		this.quantidade = quantidade;
 		this.comprador = comprador;
 		this.produto = produto;
+		this.fornecedor = fornecedor;
 	}
 	
 	public String getDataPedido() {
@@ -45,6 +49,11 @@ public class Pedido {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
+	public Fornecedor getFornecedor() {
+		return fornecedor;
+	}
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
+	}
 	
 }
