@@ -1,4 +1,4 @@
-package Fornecedor;
+package fornecedor;
 
 import controlador.FornecedorController;
 import interfaces.TelaCadastrarFornecedor;
