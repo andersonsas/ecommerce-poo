@@ -15,6 +15,15 @@ Interface de E-Commerce implementada para uma Atividade da disciplina de Program
 7. Faça push das mudanças para o repositório com `git push`.
 8. Vá para o repositório do seu FORK e crie um pull request
 
+## Correções de códigos
+- [ ] cadastrarComprador - enviar código de tela para classe de tela
+- [ ] cadastrarFornecedor - retirar _instanceof_
+- [ ] cadastrarMoveis - unidade indica se é pacote, un, kg, litro (unidade de medida)
+- [ ] fazerPedido - mudar método cadastrarComprar para cadastarPedido em Compra.java
+- [ ] receberPedido - aumentar a quantidade no estoque do produto
+- [ ] cadastrarCliente - retirar prints do controller e por nas telas
+- [X] comprarProduto
+
 ## Métodos Implementados
 - [x] cadastrarMovel (beatriz e kinan)
 - [x] cadastrarLivro (professor)
