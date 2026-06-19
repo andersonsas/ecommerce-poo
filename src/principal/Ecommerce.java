@@ -60,15 +60,18 @@ public class Ecommerce {
 				venda.consultarCliente();
 				break;
 			case 10:
-				fornecedor.cadastrarFornecedor();
+				venda.listarClientes();
 				break;
 			case 11:
-				fornecedor.buscarFornecedor();
+				fornecedor.cadastrarFornecedor();
 				break;
 			case 12:
+				fornecedor.buscarFornecedor();
+				break;
+			case 13:
 				venda.comprarProduto();
 				break;
-			case 13: 
+			case 14: 
 				compra.receberPedido();
 				break;
 			case 0:
@@ -76,6 +79,6 @@ public class Ecommerce {
 			default:
 				System.out.println("Opcao invalida!");
 			}
-		} while (opcao > 0 && opcao < 14);
+		} while (opcao > 0 && opcao < 15);
 	}
 }
