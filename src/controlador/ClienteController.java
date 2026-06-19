@@ -3,26 +3,35 @@ package controlador;
 import java.util.ArrayList;
 import java.util.List;
 import entidade.Cliente;
+import interfaces.TelaListarClientes; 
 
 public class ClienteController {
 	private List<Cliente> clientes = new ArrayList<Cliente>();
+	
+	
+	public void listarClientes() {
+		TelaListarClientes telaListar = new TelaListarClientes();
+		
+		if (clientes.isEmpty()) {
+			System.out.println("Nenhum cliente cadastrado ate o momento.");
+		} else {
+			telaListar.listarCliente(clientes); 
+		}
+	}
 	
 	public void cadastrarCliente(Cliente cliente) {
 		clientes.add(cliente);
 	}
 	
 	public void atualizarCliente(Cliente clienteAtualizado) {
-		
 		for (int i = 0; i < clientes.size(); i++) {
 	        Cliente clienteAtual = clientes.get(i);
-	        
 	        
 	        if (clienteAtual.getCodigo() == clienteAtualizado.getCodigo()) {
 	            clientes.set(i, clienteAtualizado);
 	            return; 
 	        }
 		}
-		
 		System.out.println("Cliente com código " + clienteAtualizado.getCodigo() + " não foi encontrado.");
 	}
 	

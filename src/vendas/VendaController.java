@@ -27,6 +27,10 @@ public class VendaController {
 		this.clienteController = clienteController;
 	}
 
+	public void listarClientes() {
+		this.clienteController.listarClientes();
+	}
+
 	public void cadastrarCliente () {
 		TelaCadastrarCliente tcc = new TelaCadastrarCliente();
 		clienteController.cadastrarCliente(tcc.cadastrarNovoCliente());
@@ -46,11 +50,9 @@ public class VendaController {
 	}
 
 	public void comprarProduto () {
-		// 1. Busca o produto pelo termo informado pelo cliente
 		TelaBuscaProduto tbp = new TelaBuscaProduto(produtoController);
 		List<Produto> produtosEncontrados = tbp.buscarProduto();
 
-		// 2. Cliente seleciona o produto desejado e informa a quantidade
 		TelaRealizarCompra trc = new TelaRealizarCompra();
 
 		Produto produtoEscolhido = trc.selecionarProduto(produtosEncontrados);
@@ -65,7 +67,6 @@ public class VendaController {
 			return;
 		}
 
-		// 3. Registra a venda
 		Venda venda = new Venda();
 		venda.setCodigo(vendas.size() + 1);
 		venda.setProduto(produtoEscolhido);
@@ -74,11 +75,8 @@ public class VendaController {
 
 		vendas.add(venda);
 
-		// 4. Baixa o estoque do produto
 		produtoEscolhido.reduzirEstoque(quantidade);
 
-		// 5. Confirma a operação para o cliente
 		trc.exibirConfirmacao(produtoEscolhido, quantidade);
-
 	}
 }
